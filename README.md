@@ -90,3 +90,17 @@ forge script --broadcast --rpc-url <RPC-URL> --private-key <PRIVATE_KEY> --verif
 ## Acknowledgments
 
 Inspired by [merklejerk](https://github.com/merklejerk)'s [permit-everywhere](https://github.com/merklejerk/permit-everywhere) contracts which introduce permit based approvals for all tokens regardless of EIP2612 support.
+
+## Simple(non-salt) Deployment
+
+```shell
+# deploy contract
+forge create --rpc-url <your_rpc_url> --private-key <your_private_key> src/Permit2.sol:Permit2
+
+# verify contract
+forge verify-contract <ADDRESS> src/Permit2.sol:Permit2 \
+    --chain <chain_id> \
+    --etherscan-api-key <your_api_key> \
+    --verifier-url <verifier_url>
+```
+
